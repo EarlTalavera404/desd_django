@@ -1,0 +1,12 @@
+services:
+  web_project:
+    image: web_project
+    build:
+      context: .
+      dockerfile: DockerFile
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    entrypoint: ["./web_project-entrypoint.sh"]

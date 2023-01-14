@@ -1,0 +1,20 @@
+{% extends "desd_assignment/layout.html" %}
+{% block title %}
+Registration
+{% endblock %}
+
+{% block css %}
+{% load static %} 
+<link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Bentham' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="{% static 'desd_assignment/film.css' %}"/>
+{% endblock %}
+{% block content %}
+Register a Club Representative
+
+    <form method="POST" class="log-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Register</button>
+    </form>
+{% endblock %}

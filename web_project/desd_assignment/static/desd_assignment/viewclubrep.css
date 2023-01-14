@@ -1,0 +1,158 @@
+
+
+table{
+  background-color: #333333;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+} 
+
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+th{
+  background-color: #767676;
+}
+
+tr:nth-child(even) {
+  background-color: #767676;
+}
+
+.newanchor:link, .newanchor:visited {
+  background-color: rgb(0, 75, 150);
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.newanchor:hover, .newanchor:active {
+  background-color: rgb(61, 107, 154);
+  
+}
+
+
+.grid-container {
+
+display:grid;  /* */
+height:100vh;  /*Easier to see elements across the whole page */
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-areas:
+"empty" "flex-container" "empty" ; 
+grid-gap:0px;
+margin:0;
+padding:0;
+
+
+
+
+}
+
+
+.flex-container{
+font-size: large;
+margin-left:500px;
+margin-right:400px;
+padding:0;
+grid-area:flex-container; 
+
+/* margin-right: 500px;
+margin-left: 500px; */
+
+
+
+
+}
+
+.empty{
+margin: 0;
+padding:0;
+grid-area:empty; 
+width:100%;
+}
+
+
+.filmboxes{
+font-size: large;
+width:100%;
+padding-top:20px ;
+padding-bottom:20px ; 
+/* padding-left:500px ;  */
+display: flex;
+
+
+}
+
+.filmtitle{
+padding-left:10px ;
+padding-right:10px ;
+font-family:'Bentham';
+font-size: 25px;
+width:200px;
+}
+
+.agerating{
+padding-left:10px ;
+padding-right:10px ;
+font-family:'Roboto Mono';
+font-size: 15px;
+color:#767676;
+
+}
+.filmduration{
+padding-left:10px ;
+padding-right:10px ;
+font-family:'Roboto Mono';
+font-size: 15px;
+color:#767676;
+
+
+
+}
+.filmimage{
+padding-left:10px ;
+padding-right:10px ;
+font-family:'Bentham';
+margin:10px;
+
+
+
+}
+
+.filmDescription
+{
+padding-left:10px ;
+padding-right:10px ;
+font-family:'Roboto Mono';
+font-size: 15px;
+width:600px;
+color: #b7b7b7;
+
+
+}
+
+span{
+font-family:'Bentham';
+font-size: 20px;
+color:#e4e4e4;
+}
+
+img{
+height:232px;
+width:150px;
+}
+
+
+/* Solid border */
+hr.solid {
+border-top: 1px solid #767676;
+}
+
+

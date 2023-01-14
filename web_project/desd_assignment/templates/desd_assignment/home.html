@@ -1,0 +1,53 @@
+{% extends "desd_assignment/layout.html" %}
+{% load static %} 
+
+{% block title %}
+    Home
+{% endblock %}
+{% block content %}
+
+{% block css %}
+{% load static %} 
+<link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Bentham' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="{% static 'desd_assignment/viewclubrep.css' %}"/>
+{% endblock %}
+
+
+    <h2>Club Representative</h2>
+
+    {% if club_rep_list %}
+        <table class="club_rep_list">
+            <thead>
+            <tr>
+                <th>Representative Number</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Password</th>
+                <th>Date of Birth</th>
+                <th>Delete </th>
+                <th>Update</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for clubrep in club_rep_list %}
+                <tr>
+                    <td>{{ clubrep.repNumber }}</td>
+                    <td>{{ clubrep.firstName}}</td>
+                    <td>{{ clubrep.lastName }}</td>
+                    <td> {{ clubrep.password }} </td>
+                    <td>{{clubrep.dob }} </td>
+                    <td><a href="delete/{{ clubrep.id }}" class="newanchor">Delete</a>
+                    <td><a href="update/{{ clubrep.id }}" class="newanchor">Update</a></td>
+                    
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No club representives are present. Use the <a href="{% url 'register' %}">Register Form</a>.</p>
+    {% endif %}
+    
+{% endblock %}
+

@@ -1,0 +1,61 @@
+{% extends "desd_assignment/layout.html" %}
+{% block title %}
+    View Films
+{% endblock %}
+
+
+{% block css %}
+{% load static %} 
+<link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Bentham' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="{% static 'desd_assignment/film.css' %}"/>
+{% endblock %}
+<div class = "grid-container">
+{% block content %}
+
+
+    <div class = "flex-container"> 
+
+        {% if film_list %}
+            {% for film in film_list %}
+            <div class="filmboxes">
+
+                <div class="filmimage ">
+                    
+                    <img src="{{ film.filmImage.url }}" />
+
+                </div>
+
+               
+                <table class="film_list">
+                    <tbody>
+                    
+                        <tr>
+                            <td><div class="filmtitle "> {{ film.title }} </div> </td>
+                        </tr>
+
+                        <tr>
+                            <td> <div class="agerating"><p> <span style>Age Rating: </span>{{ film.ageRating}}</p> </div> </td>
+                        </tr> 
+
+                        <tr>
+                            <td><div class="filmduration "> <p> <span style>Running Time: </span> {{ film.duration }}</p></div> </td>
+                        </tr>
+
+                         <tr> 
+                            <td><div class="filmDescription ">   <p>  {{ film.filmDescription }}</p> </div>  </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>    
+            </div>
+            
+            <hr class="solid">
+            {% endfor %}
+        {% else %}
+            <p>No Films are in the system. .</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
