@@ -40,7 +40,6 @@ class ClubRepresentative():
             lastName = request.POST['lastName']
             password = request.POST['password']
             dob = request.POST['dob']
-            image = request.POST
             member = ClubRep.objects.get(id=id)
 
             member.repNumber = repNumber

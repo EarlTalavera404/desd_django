@@ -17,5 +17,3 @@ class UpdateForm(forms.ModelForm):
             model = ClubRep # table data in and out
             fields = ("repNumber","firstName","lastName","password","dob",)
 
-
-
